@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from data import DATA, ORDER, BATCH_SIZE, estimate
+from data import DATA, ORDER, BATCH_SIZE, sample_mean
 
 
 plt.plot(
@@ -8,7 +8,7 @@ plt.plot(
     DATA,
     'bo'
 )
-plt.axhline(estimate * BATCH_SIZE, color='r')
+plt.axhline(sample_mean * BATCH_SIZE, color='r')
 plt.title(f'Počet hlav v sériích délky {BATCH_SIZE}')
 plt.legend(['Hlavy v sérii', 'Průměr'])
 plt.yticks(list(range(max(DATA)+2)))
